@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #a1c4fd;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.search-box {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px;
+  border: none;
+  background: #4da8da;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+}
+
+.card {
+  background: #f0f8ff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card.hidden {
+  display: none;
+}
+
+#temp {
+  font-size: 1.8rem;
+  color: #2a4d69;
+  margin: 10px 0;
+}
+
+#icon {
+  width: 60px;
+  height: 60px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>☁️ Weather Forecast</h1>
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button onclick="getWeather()">🔍</button>
+    </div>
+    <div id="weatherCard" class="card hidden">
+      <h2 id="cityName"></h2>
+      <p id="description"></p>
+      <h3><span id="temp"></span>°C</h3>
+      <img id="icon" />
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
